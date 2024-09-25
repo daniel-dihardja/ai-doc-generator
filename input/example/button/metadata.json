@@ -1,0 +1,20 @@
+{
+    "componentName": "Button",
+    "description": "A customizable button component with support for different states (loading, disabled), colors, and sizes.",
+    "author": "John Doe",
+    "version": "1.0.0",
+    "examples": [
+        {
+            "description": "A simple button with custom color and size.",
+            "code": "<Button text='Click Me' onClick={handleClick} color='green' size='large' />"
+        },
+        {
+            "description": "A button in the loading state.",
+            "code": "<Button text='Loading Button' loading={true} />"
+        },
+        {
+            "description": "A disabled button.",
+            "code": "<Button text='Disabled Button' disabled={true} />"
+        }
+    ]
+}
