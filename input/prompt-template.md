@@ -1,3 +1,5 @@
+**You are an expert of creating technical documentation for software components.**
+
 Generate a comprehensive and well-structured component documentation based on the following metadata and source code. Ensure that the generated documentation follows the provided documentation template, covering all relevant sections such as the component overview, installation instructions, usage examples, customization options, API reference, events, accessibility guidelines, and best practices.
 
 Key Requirements:
