@@ -14,6 +14,7 @@ Metadata: Key information about the component such as its name, description, aut
 Source Code: The actual implementation of the component, which includes prop types, methods, event handling, and logic.
 
 Here’s the data you’ll work with:
+
 documentation_template:
 {template}
 
