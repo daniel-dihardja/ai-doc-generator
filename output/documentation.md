@@ -4,8 +4,9 @@
 
 A customizable button component with support for different states (loading, disabled), colors, and sizes.
 
-- **When to use**: The Button component is useful for creating interactive elements like buttons in web applications.
-  
+- **When to use**: The Button component is ideal for creating interactive elements like buttons in web applications.
+- Optionally, include diagrams or flowcharts if needed to describe the workflow.
+
 ---
 
 ## 2. Installation Instructions
@@ -30,6 +31,8 @@ To install this component, run the following commands using your preferred packa
   ```bash
   pnpm add button
   ```
+
+Include any global dependencies if necessary.
 
 ---
 
@@ -57,25 +60,25 @@ Here’s how to use this component in your application:
 1. **Basic Example**:
 
    ```jsx
-   <Button text='Simple Usage' onClick={handleClick} />
+   <Button label="Simple Usage" onClick={handleClick} />
    ```
 
 2. **Variants**:
 
    ```jsx
-   <Button text='Primary' variant="primary" onClick={handleClick} />
-   <Button text='Secondary' variant="secondary" onClick={handleClick} />
+   <Button label="Primary" color="primary" />
+   <Button label="Secondary" color="secondary" />
    ```
 
 3. **Disabled State**:
 
    ```jsx
-   <Button text='Disabled' disabled onClick={handleClick} />
+   <Button label="Disabled" disabled />
    ```
 
 4. **Loading State**:
    ```jsx
-   <Button text='Loading...' loading onClick={handleClick} />
+   <Button label="Loading..." loading />
    ```
 
 ---
@@ -85,7 +88,7 @@ Here’s how to use this component in your application:
 - You can customize the component’s appearance by passing custom classes or using a theming mechanism (e.g., CSS-in-JS, Tailwind CSS).
 
   ```jsx
-  <Button text='Styled Button' className="bg-blue-500 hover:bg-blue-700" onClick={handleClick} />
+  <Button label="Styled Button" className="bg-blue-500 hover:bg-blue-700" />
   ```
 
 - Learn how to extend or override default styles.
@@ -98,18 +101,19 @@ Here’s how to use this component in your application:
 
 | Prop Name    | Type       | Description                        | Default     |
 | ------------ | ---------- | ---------------------------------- | ----------- |
-| `text`       | `string`   | The label text displayed inside the button. | - |
-| `onClick`    | `function` | Callback function to be called when the button is clicked. | `() => {}` |
-| `disabled`   | `boolean`  | If true, the button will be disabled and unclickable. | `false` |
-| `loading`    | `boolean`  | If true, a spinner will be displayed inside the button, and the button will not be clickable. | `false` |
-| `color`      | `string`   | The background color of the button. | `#007BFF` |
-| `size`       | `string`   | The size of the button. It can be 'small', 'medium', or 'large'. | `medium` |
+| `label`      | `string`   | The label text displayed on the button. | - |
+| `onClick`    | `() => void` | Callback function to be called when the button is clicked. | - |
+| `disabled`   | `boolean`  | Whether the button is disabled. | `false` |
+| `loading`    | `boolean`  | Whether the button is in a loading state. | `false` |
+| `size`       | `ButtonSize` | Button size: 'small', 'medium', 'large'. | `"medium"` |
+| `color`      | `ButtonColor` | Button color: 'primary', 'secondary', 'danger', 'success'. | `"primary"` |
 
 ### Events
 
 | Event Name | Type                          | Description                      |
 | ---------- | ----------------------------- | -------------------------------- |
-| `onClick`  | `(event: MouseEvent) => void` | Fires when the button is clicked |
+| `onClick`  | `() => void` | Fires when the button is clicked |
+| `onChange` | `(value: string) => void`     | Fired when the value changes     |
 
 ---
 
@@ -137,7 +141,7 @@ This component follows accessibility best practices:
 - Handle different states like hover, focus, error, success:
 
   ```jsx
-  <Button text='Error State' variant="error" onClick={handleClick} />
+  <Button label="Error State" color="danger" />
   ```
 
 - Ensure that edge cases, such as empty states or long text, are handled gracefully.

@@ -1,75 +1,128 @@
-import React from "react";
-import PropTypes from "prop-types";
+// Button.ts
 
-// A simple Button component
-const Button = ({ text, onClick, disabled, loading, color, size }) => {
-  // Handle button click
-  const handleClick = (event) => {
-    if (!disabled && !loading) {
-      onClick(event);
+type ButtonSize = "small" | "medium" | "large";
+type ButtonColor = "primary" | "secondary" | "danger" | "success";
+
+interface ButtonProps {
+  /**
+   * The label text displayed on the button.
+   */
+  label: string;
+
+  /**
+   * Callback function to be called when the button is clicked.
+   */
+  onClick?: () => void;
+
+  /**
+   * Whether the button is disabled.
+   */
+  disabled?: boolean;
+
+  /**
+   * Whether the button is in a loading state.
+   */
+  loading?: boolean;
+
+  /**
+   * Button size: 'small', 'medium', 'large'.
+   */
+  size?: ButtonSize;
+
+  /**
+   * Button color: 'primary', 'secondary', 'danger', 'success'.
+   */
+  color?: ButtonColor;
+}
+
+export class Button {
+  private element: HTMLButtonElement;
+
+  constructor(private props: ButtonProps) {
+    // Create the button element
+    this.element = document.createElement("button");
+
+    // Set the initial styles and properties
+    this.init();
+  }
+
+  private init() {
+    // Set button text
+    this.element.innerHTML = this.props.loading
+      ? "Loading..."
+      : this.props.label;
+
+    // Apply disabled state
+    this.element.disabled = !!this.props.disabled || !!this.props.loading;
+
+    // Add size and color classes
+    this.element.className = `button ${this.props.size || "medium"} ${
+      this.props.color || "primary"
+    }`;
+
+    // Bind the click event if provided
+    if (this.props.onClick && !this.props.disabled && !this.props.loading) {
+      this.element.addEventListener("click", this.props.onClick);
     }
-  };
 
-  // Define the button styles based on props
-  const buttonStyles = {
-    backgroundColor: disabled ? "#ccc" : color || "#007BFF",
-    color: disabled ? "#666" : "#fff",
-    fontSize: size === "large" ? "18px" : size === "small" ? "12px" : "14px",
-    padding:
-      size === "large"
-        ? "12px 24px"
-        : size === "small"
-        ? "6px 12px"
-        : "8px 16px",
-    border: "none",
-    borderRadius: "4px",
-    cursor: disabled || loading ? "not-allowed" : "pointer",
-    display: "inline-block",
-    position: "relative",
-  };
+    // Apply styles
+    this.applyStyles();
+  }
 
-  // Spinner to show when loading
-  const spinner = (
-    <span
-      style={{
-        width: "16px",
-        height: "16px",
-        border: "2px solid #f3f3f3",
-        borderTop: "2px solid #3498db",
-        borderRadius: "50%",
-        animation: "spin 1s linear infinite",
-        marginRight: "8px",
-        display: "inline-block",
-        verticalAlign: "middle",
-      }}
-    />
-  );
+  // A method to update the button's properties dynamically
+  public updateProps(newProps: Partial<ButtonProps>) {
+    this.props = { ...this.props, ...newProps };
+    this.init(); // Reinitialize the button with the updated properties
+  }
 
-  return (
-    <button onClick={handleClick} style={buttonStyles} disabled={disabled}>
-      {loading ? spinner : null}
-      {loading ? "Loading..." : text}
-    </button>
-  );
-};
+  // Append the button to a target element in the DOM
+  public render(target: HTMLElement) {
+    target.appendChild(this.element);
+  }
 
-// Prop types for the Button component
-Button.propTypes = {
-  text: PropTypes.string.isRequired, // Button text
-  onClick: PropTypes.func, // Click event handler
-  disabled: PropTypes.bool, // Whether the button is disabled
-  loading: PropTypes.bool, // Whether the button shows a loading state
-  color: PropTypes.string, // Button background color
-  size: PropTypes.oneOf(["small", "medium", "large"]), // Button size
-};
+  // Internal method to apply basic styles
+  private applyStyles() {
+    this.element.style.padding = this.getSizePadding();
+    this.element.style.fontSize = this.getFontSize();
+    this.element.style.cursor =
+      this.props.disabled || this.props.loading ? "not-allowed" : "pointer";
 
-// Default props
-Button.defaultProps = {
-  onClick: () => {},
-  disabled: false,
-  loading: false,
-  color: "#007BFF",
-  size: "medium",
-};
+    // Color mapping
+    const colorMapping = {
+      primary: "#007bff",
+      secondary: "#6c757d",
+      danger: "#dc3545",
+      success: "#28a745",
+    };
 
-export default Button;
+    this.element.style.backgroundColor =
+      colorMapping[this.props.color || "primary"];
+    this.element.style.color = "#ffffff"; // Set text color to white
+    this.element.style.border = "none";
+    this.element.style.borderRadius = "4px";
+  }
+
+  // Get appropriate padding based on size
+  private getSizePadding(): string {
+    switch (this.props.size) {
+      case "small":
+        return "6px 12px";
+      case "large":
+        return "12px 24px";
+      default:
+        return "8px 16px";
+    }
+  }
+
+  // Get appropriate font size based on size
+  private getFontSize(): string {
+    switch (this.props.size) {
+      case "small":
+        return "12px";
+      case "large":
+        return "18px";
+      default:
+        return "14px";
+    }
+  }
+}
