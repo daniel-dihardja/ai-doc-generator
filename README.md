@@ -1,6 +1,6 @@
 # AI Component Documentation Generator
 
-This project provides a Docker CLI app that automatically generates component documentation based on provided metadata, source code, and a documentation template. The generated documentation follows a predefined template, but the location of the prompt template and documentation template can be customized to meet specific needs.
+This project provides a Docker CLI app that automatically generates component documentation based on provided **metadata**, **source code**, and a **documentation template**. The generated documentation follows a predefined template, but the location of the prompt template and documentation template can be customized to meet specific needs.
 
 ## 🚀 Features
 
