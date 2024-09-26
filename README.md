@@ -29,5 +29,3 @@ docker-compose run --rm ai-doc-gen
 ```
 
 Make sure to adjust the `docker-compose.yml` file as needed, such as setting environment variables (`OPENAI_API_KEY`, `OPENAI_MODEL`) and modifying the volume paths for your `input` and `output` files.
-
-Both methods will generate the documentation using the specified input files and save the output in the `output` folder.
