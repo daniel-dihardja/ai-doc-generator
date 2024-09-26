@@ -18,14 +18,14 @@ def parse_args():
         "--metadata",
         type=str,
         required=False,
-        default="input/example/button/metadata.json",
+        default="input/example/select/metadata.json",
         help="Path to the metadata file (MD format)",
     )
     parser.add_argument(
         "--source",
         type=str,
         required=False,
-        default="input/example/button/sourcecode.ts",
+        default="input/example/select/sourcecode.ts",
         help="Path to the source code file",
     )
     parser.add_argument(
@@ -51,7 +51,7 @@ def parse_args():
     parser.add_argument(
         "--output",
         type=str,
-        default="output/documentation.md",
+        default="output/documentation-select.md",
         help="Output path for the generated documentation",
     )
     return parser.parse_args()
@@ -95,7 +95,7 @@ def main():
         "writing_style": read_file(args.writing_style),
     }
 
-    # print(p)
+    print(p["writing_style"])
 
     # Invoke the model with input data
     res = chain.invoke(p)
