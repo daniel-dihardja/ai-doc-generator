@@ -1,5 +1,3 @@
-// Button.ts
-
 type ButtonSize = "small" | "medium" | "large";
 type ButtonColor = "primary" | "secondary" | "danger" | "success";
 

@@ -2,10 +2,9 @@
 
 ## 1. Component Overview
 
-A customizable button component with support for different states (loading, disabled), colors, and sizes.
+The Button component is like the Swiss Army knife of UI elements—it's versatile, reliable, and always there when you need it. Need a clickable element to kick off actions like submitting forms, starting processes, or navigating through pages? Button's got your back!
 
-- **When to use**: The Button component is ideal for creating interactive elements like buttons in web applications.
-- Optionally, include diagrams or flowcharts if needed to describe the workflow.
+- **When to use**: Use the Button component when you need a trusty sidekick for triggering actions in your app.
 
 ---
 
@@ -18,21 +17,19 @@ To install this component, run the following commands using your preferred packa
 - **npm**
 
   ```bash
-  npm install button
+  npm install @your-library/button
   ```
 
 - **yarn**
 
   ```bash
-  yarn add button
+  yarn add @your-library/button
   ```
 
 - **pnpm**
   ```bash
-  pnpm add button
+  pnpm add @your-library/button
   ```
-
-Include any global dependencies if necessary.
 
 ---
 
@@ -60,25 +57,25 @@ Here’s how to use this component in your application:
 1. **Basic Example**:
 
    ```jsx
-   <Button label="Simple Usage" onClick={handleClick} />
+   <Button>Click Me</Button>
    ```
 
 2. **Variants**:
 
    ```jsx
-   <Button label="Primary" color="primary" />
-   <Button label="Secondary" color="secondary" />
+   <Button variant="primary">Primary</Button>
+   <Button variant="secondary">Secondary</Button>
    ```
 
 3. **Disabled State**:
 
    ```jsx
-   <Button label="Disabled" disabled />
+   <Button isDisabled>Disabled</Button>
    ```
 
 4. **Loading State**:
    ```jsx
-   <Button label="Loading..." loading />
+   <Button isLoading>Loading...</Button>
    ```
 
 ---
@@ -88,7 +85,7 @@ Here’s how to use this component in your application:
 - You can customize the component’s appearance by passing custom classes or using a theming mechanism (e.g., CSS-in-JS, Tailwind CSS).
 
   ```jsx
-  <Button label="Styled Button" className="bg-blue-500 hover:bg-blue-700" />
+  <Button className="bg-blue-500 hover:bg-blue-700">Styled Button</Button>
   ```
 
 - Learn how to extend or override default styles.
@@ -99,20 +96,19 @@ Here’s how to use this component in your application:
 
 ### Component Props
 
-| Prop Name    | Type       | Description                        | Default     |
-| ------------ | ---------- | ---------------------------------- | ----------- |
-| `label`      | `string`   | The label text displayed on the button. | - |
-| `onClick`    | `() => void` | Callback function to be called when the button is clicked. | - |
-| `disabled`   | `boolean`  | Whether the button is disabled. | `false` |
-| `loading`    | `boolean`  | Whether the button is in a loading state. | `false` |
-| `size`       | `ButtonSize` | Button size: 'small', 'medium', 'large'. | `"medium"` |
-| `color`      | `ButtonColor` | Button color: 'primary', 'secondary', 'danger', 'success'. | `"primary"` |
+| Prop Name    | Type                                   | Description                        | Default     |
+| ------------ | -------------------------------------- | ---------------------------------- | ----------- |
+| `variant`    | `string`                               | The visual style of the button     | `"default"` |
+| `size`       | `small` &#124; `medium` &#124; `large` | Adjusts the button size            | `"medium"`  |
+| `isDisabled` | `boolean`                              | Disables the button                | `false`     |
+| `onClick`    | `function`                             | Function triggered on button click | -           |
+| `isLoading`  | `boolean`                              | Shows a loading spinner            | `false`     |
 
 ### Events
 
 | Event Name | Type                          | Description                      |
 | ---------- | ----------------------------- | -------------------------------- |
-| `onClick`  | `() => void` | Fires when the button is clicked |
+| `onClick`  | `(event: MouseEvent) => void` | Fires when the button is clicked |
 | `onChange` | `(value: string) => void`     | Fired when the value changes     |
 
 ---
@@ -141,7 +137,7 @@ This component follows accessibility best practices:
 - Handle different states like hover, focus, error, success:
 
   ```jsx
-  <Button label="Error State" color="danger" />
+  <Button variant="error">Error State</Button>
   ```
 
 - Ensure that edge cases, such as empty states or long text, are handled gracefully.
@@ -164,3 +160,5 @@ To ensure the component works properly:
   ```
 
 ---
+
+That's it! You're all set to button up your app with the Button component. Happy coding! 🚀

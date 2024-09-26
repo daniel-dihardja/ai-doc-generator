@@ -1,20 +1,93 @@
 {
     "componentName": "Button",
-    "description": "A customizable button component with support for different states (loading, disabled), colors, and sizes.",
-    "author": "John Doe",
-    "version": "1.0.0",
-    "examples": [
+    "componentOverview": {
+        "description": "The Button component is a reusable UI element that triggers an action when clicked. It can be customized with different sizes, colors, and states (e.g., loading, disabled).",
+        "whenToUse": "Use the Button component when you need a clickable element to trigger actions like submitting forms, starting processes, or navigating through pages."
+    },
+    "installationInstructions": {
+        "npm": "npm install @your-library/button",
+        "yarn": "yarn add @your-library/button",
+        "pnpm": "pnpm add @your-library/button",
+        "globalDependencies": null
+    },
+    "importInstructions": {
+        "individualImport": "import { Button } from '@your-library/button';",
+        "globalImport": "import { Button } from '@your-library/react';"
+    },
+    "usageExamples": {
+        "basicExample": "<Button>Click Me</Button>",
+        "variants": "<Button variant='primary'>Primary</Button>\n<Button variant='secondary'>Secondary</Button>",
+        "disabledState": "<Button isDisabled>Disabled</Button>",
+        "loadingState": "<Button isLoading>Loading...</Button>"
+    },
+    "customizationAndTheming": {
+        "example": "<Button className='bg-blue-500 hover:bg-blue-700'>Styled Button</Button>",
+        "theming": "You can extend the default styles using Tailwind CSS classes or any CSS-in-JS solution. Pass in custom class names to override the default theme."
+    },
+    "apiReference": {
+        "props": [
+            {
+                "name": "variant",
+                "type": "string",
+                "description": "The visual style of the button.",
+                "default": "default"
+            },
+            {
+                "name": "size",
+                "type": "string",
+                "description": "Adjusts the size of the button.",
+                "default": "medium"
+            },
+            {
+                "name": "isDisabled",
+                "type": "boolean",
+                "description": "Disables the button when true.",
+                "default": "false"
+            },
+            {
+                "name": "onClick",
+                "type": "function",
+                "description": "Function triggered when the button is clicked.",
+                "default": "-"
+            },
+            {
+                "name": "isLoading",
+                "type": "boolean",
+                "description": "Shows a loading spinner when true.",
+                "default": "false"
+            }
+        ]
+    },
+    "events": [
         {
-            "description": "A simple button with custom color and size.",
-            "code": "<Button text='Click Me' onClick={handleClick} color='green' size='large' />"
+            "name": "onClick",
+            "type": "(event: MouseEvent) => void",
+            "description": "Triggered when the button is clicked."
         },
         {
-            "description": "A button in the loading state.",
-            "code": "<Button text='Loading Button' loading={true} />"
-        },
-        {
-            "description": "A disabled button.",
-            "code": "<Button text='Disabled Button' disabled={true} />"
+            "name": "onChange",
+            "type": "(value: string) => void",
+            "description": "Triggered when the value of an associated input changes."
         }
-    ]
+    ],
+    "accessibilityGuidelines": {
+        "ariaRole": "button",
+        "keyboardNavigation": "Supports navigation via Tab, Enter, and Space keys.",
+        "focusManagement": "The button has proper focus management and a visible focus state.",
+        "screenReaderCompatibility": "The button provides screen reader compatibility with meaningful labels."
+    },
+    "bestPractices": [
+        "Ensure that button labels are clear and meaningful.",
+        "Avoid using too many visual variants in the same context.",
+        "Use the loading state only when performing a long-running task."
+    ],
+    "componentStatesAndEdgeCases": {
+        "hoverState": "<Button className='hover:bg-gray-300'>Hover Me</Button>",
+        "focusState": "<Button className='focus:ring-2'>Focus Me</Button>",
+        "longTextState": "<Button>Click me to perform a very long operation...</Button>"
+    },
+    "testingGuidelines": {
+        "unitTesting": "jest button.test.js",
+        "endToEndTesting": "cypress run"
+    }
 }

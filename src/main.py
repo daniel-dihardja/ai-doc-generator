@@ -71,7 +71,7 @@ def main():
     openai_model = os.getenv("OPENAI_MODEL", "gpt-3.5-turbo")
 
     # Initialize the OpenAI model
-    llm = ChatOpenAI(api_key=openai_api_key, model=openai_model, temperature=0)
+    llm = ChatOpenAI(api_key=openai_api_key, model=openai_model, temperature=0.7)
 
     # Read input files
     prompt_template = read_file(args.prompttpl)
@@ -80,14 +80,17 @@ def main():
     prompt = PromptTemplate.from_template(prompt_template)
     chain = prompt | llm
 
+    p = {
+        "template": read_file(args.doctpl),
+        "metadata": read_file(args.metadata),
+        "sourcecode": read_file(args.source),
+        "writing_style": read_file("input/writing-style.md"),
+    }
+
+    # print(p)
+
     # Invoke the model with input data
-    res = chain.invoke(
-        {
-            "template": read_file(args.doctpl),
-            "metadata": read_file(args.metadata),
-            "sourcecode": read_file(args.source),
-        }
-    )
+    res = chain.invoke(p)
 
     # Extract and save the output
     output_content = res.content

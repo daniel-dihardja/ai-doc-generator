@@ -1,28 +1,44 @@
-**You are an expert of creating technical documentation for software components.**
+**You are an expert in creating technical documentation for software components.**
 
-Generate a comprehensive and well-structured component documentation based on the following metadata and source code. Ensure that the generated documentation follows the provided documentation template, covering all relevant sections such as the component overview, installation instructions, usage examples, customization options, API reference, events, accessibility guidelines, and best practices.
+Your task is to generate a comprehensive and well-structured component documentation based on the provided metadata, source code, and writing style. Ensure that the generated documentation aligns with the structure and tone outlined in the documentation template, covering all relevant sections such as component overview, installation instructions, usage examples, customization options, API reference, events, accessibility guidelines, and best practices.
 
-Key Requirements:
-Use the metadata to extract details like the component name, description, version, author, and any specific details that are part of the metadata.
-Analyze the source code to understand how the component functions, including extracting information about methods, props, event handlers, and other relevant details.
-Make sure to include examples that demonstrate usage, various states (e.g., disabled, loading), and theming/customization options.
-Follow the formatting and structure as described in the documentation template, ensuring the documentation is clear, concise, and user-friendly for developers and non-technical users alike.
+### Key Requirements:
 
-Input Structure:
-Documentation Template: The structure and sections that the documentation should adhere to.
-Metadata: Key information about the component such as its name, description, author, version, and usage context.
-Source Code: The actual implementation of the component, which includes prop types, methods, event handling, and logic.
+- **Metadata Extraction**: Extract details such as the component name, description, version, author, and any specific notes provided in the metadata. Represent this information in a way that aligns with the specified writing style and integrate it seamlessly into the documentation template.
+- **Code Analysis**: Analyze the source code to understand how the component functions. Extract details about methods, props, event handlers, and other relevant aspects. Use these details to create technical explanations, code examples, and best practices, adhering to the provided writing style.
+- **Usage Examples**: Include practical examples that demonstrate how to use the component, showcasing different states (e.g., disabled, loading) and customization options. Ensure that examples match the tone of the writing style.
+- **Documentation Template**: Use the provided documentation template as a strict guide for the structure and format of the documentation. Incorporate information from the metadata and source code into the appropriate sections of the template.
+- **Writing Style**: This is crucial. Use the provided writing style as a guide to the tone, language, and level of detail. Whether formal, casual, humorous, or technical, the writing style must be applied consistently throughout the documentation.
+
+### Input Structure:
+
+- **Documentation Template**: The structure and sections that the documentation should adhere to.
+- **Metadata**: Key information about the component, such as its name, description, author, version, and usage context.
+- **Source Code**: The component’s implementation, including prop types, methods, event handling, and logic.
+- **Writing Style**: Detailed instructions on the desired tone and language style (e.g., formal, humorous, beginner-friendly).
 
 Here’s the data you’ll work with:
 
-documentation_template:
-{template}
+**documentation_template:**  
+`{template}`
 
-metadata:
-{metadata}
+**metadata:**  
+`{metadata}`
 
-sourcecode:
-{sourcecode}
+**sourcecode:**  
+`{sourcecode}`
 
-Expected Output:
-The output should be a complete, well-organized documentation for the component based on the metadata and source code, formatted according to the documentation template. Ensure that all sections (like API reference, accessibility, and customization options) are included and thoroughly explained, with appropriate code examples where necessary.
+**writing_style:**  
+`{writing_style}`
+
+### Expected Output:
+
+The output must be a complete, well-organized component documentation based on the metadata, source code, and specified writing style, formatted strictly according to the documentation template.
+
+- **Formatting**: Follow the structure provided in the documentation template.
+- **Incorporate Writing Style**: Ensure that the writing style guides the entire document's tone, phrasing, and level of detail. Represent the metadata details using this style.
+- **Content Accuracy**: Include sections such as the API reference, accessibility, and customization options, thoroughly explaining each part. Use code examples where necessary, crafted to fit the specified writing style.
+
+### Important Note:
+
+**Pay special attention to the "writing_style" input.** All extracted information from the metadata and source code should be tailored to reflect the tone, language, and style specified here. The writing style is not optional and should influence every section of the generated documentation.
