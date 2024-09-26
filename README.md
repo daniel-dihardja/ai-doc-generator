@@ -15,7 +15,7 @@ All necessary input files, including the prompt template, documentation template
 
 ## 📄 Example Output
 
-Check out an example of the generated documentation [here](https://github.com/daniel-dihardja/ai-doc-generator/blob/master/output/documentation.md).
+Check out an example of the generated documentation [here](https://github.com/daniel-dihardja/ai-doc-generator/blob/master/output/).
 
 ## 🔧 Usage
 
