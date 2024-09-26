@@ -98,12 +98,12 @@ Here’s how to use this component in your application:
 
 ### Component Props
 
-| Prop Name    | Type       | Description                        | Default     |
-| ------------ | ---------- | ---------------------------------- | ----------- | -------------------------- | ------ |
-| `variant`    | `string`   | The visual style of the component  | `"default"` |
-| `size`       | `sm        | md                                 | lg`         | Adjusts the component size | `"md"` |
-| `isDisabled` | `boolean`  | Disables the component             | `false`     |
-| `onClick`    | `function` | Function triggered on button click | `-`         |
+| Prop Name    | Type       | Description                                   | Default     |
+| ------------ | ---------- | --------------------------------------------- | ----------- |
+| `variant`    | `string`   | The visual style of the component             | `"default"` |
+| `size`       | `string`   | Adjusts the component size (`sm`, `md`, `lg`) | `"md"`      |
+| `isDisabled` | `boolean`  | Disables the component                        | `false`     |
+| `onClick`    | `function` | Function triggered on button click            | `-`         |
 
 ### Events
 
