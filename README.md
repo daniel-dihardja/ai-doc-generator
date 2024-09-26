@@ -23,3 +23,7 @@ docker run --rm \
     --template input/documentation-template.md \
     --output output/documentation.md
 ```
+
+## 📄 Example Output
+
+Check out an example of the generated documentation [here](https://github.com/daniel-dihardja/ai-doc-generator/blob/master/output/documentation.md).
