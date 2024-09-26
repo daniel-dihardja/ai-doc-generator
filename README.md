@@ -28,7 +28,9 @@ docker run --rm \
     ai-doc-gen \
     --metadata input/example/button/metadata.json \
     --source input/example/button/sourcecode.ts \
-    --template input/documentation-template.md \
+    --prompt_tpl input/prompt-template.md \
+    --doc_tpl input/documentation-template.md \
     --writing_style input/writing-style.md \
     --output output/documentation.md
+
 ```
