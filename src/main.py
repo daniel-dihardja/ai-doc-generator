@@ -40,6 +40,14 @@ def parse_args():
         default="input/prompt-template.md",
         help="Path to the prompt template",
     )
+
+    parser.add_argument(
+        "--writing_style",
+        type=str,
+        default="input/writing-style.md",
+        help="Writing style of the documentation",
+    )
+
     parser.add_argument(
         "--output",
         type=str,
@@ -84,7 +92,7 @@ def main():
         "template": read_file(args.doctpl),
         "metadata": read_file(args.metadata),
         "sourcecode": read_file(args.source),
-        "writing_style": read_file("input/writing-style.md"),
+        "writing_style": read_file(args.writing_style),
     }
 
     # print(p)
