@@ -1,0 +1,47 @@
+{
+    "componentName": "RadioGroup",
+    "componentOverview": {
+        "description": "The RadioGroup component is designed for selecting a single option from a list of predefined choices. This component offers different layouts, styles, and supports both controlled and uncontrolled states.",
+        "whenToUse": "Use RadioGroup when you want the user to pick only one option out of a given set, such as selecting a gender, choosing a payment method, or setting a preference."
+    },
+    "installationInstructions": {
+        "npm": "npm install @your-library/radiogroup",
+        "yarn": "yarn add @your-library/radiogroup",
+        "pnpm": "pnpm add @your-library/radiogroup",
+        "globalDependencies": "None"
+    },
+    "importInstructions": {
+        "individualImport": "import { RadioGroup } from '@your-library/radiogroup';",
+        "globalImport": "import { RadioGroup } from '@your-library/react';"
+    },
+    "usageExamples": {
+        "basicExample": "<RadioGroup options={['Option 1', 'Option 2', 'Option 3']} />",
+        "controlledExample": "<RadioGroup value='Option 2' onChange={(value) => console.log(value)} options={['Option 1', 'Option 2', 'Option 3']} />",
+        "disabledState": "<RadioGroup options={['Option 1', 'Option 2']} isDisabled />",
+        "horizontalLayout": "<RadioGroup options={['Option 1', 'Option 2', 'Option 3']} layout='horizontal' />"
+    },
+    "customizationAndTheming": {
+        "example": "<RadioGroup options={['Option 1', 'Option 2']} className='text-blue-600' />",
+        "theming": "Customize the RadioGroup with CSS classes or inline styles. Pass in custom class names to modify colors, spacing, and layout to fit your design system."
+    },
+    "accessibilityGuidelines": {
+        "ariaRole": "radiogroup",
+        "keyboardNavigation": "Allows navigation through Arrow keys to change the selection within the group.",
+        "focusManagement": "Automatically handles focus when navigating options, ensuring the selected option is focusable.",
+        "screenReaderCompatibility": "Supports screen readers by providing meaningful labels for each radio button within the group."
+    },
+    "bestPractices": [
+        "Always provide a label for the RadioGroup to indicate its purpose.",
+        "Use distinct labels for each radio option to avoid confusion.",
+        "Ensure that the default selected option is clear to the user, or allow no selection initially if required."
+    ],
+    "componentStatesAndEdgeCases": {
+        "noSelection": "<RadioGroup options={['Option 1', 'Option 2', 'Option 3']} value='' />",
+        "errorState": "<RadioGroup options={['Option 1', 'Option 2']} className='border-red-500' error='Please select an option.' />",
+        "longLabels": "<RadioGroup options={['A very long option label that might overflow', 'Option 2']} />"
+    },
+    "testingGuidelines": {
+        "unitTesting": "jest radiogroup.test.js",
+        "endToEndTesting": "cypress run radiogroup.cy.js"
+    }
+}

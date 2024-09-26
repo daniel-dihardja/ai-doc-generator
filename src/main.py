@@ -10,6 +10,9 @@ if os.getenv("DOCKER_ENV") != "true":
     load_dotenv()
 
 
+comp = "radiogroup"
+
+
 def parse_args():
     parser = argparse.ArgumentParser(
         description="Generate component documentation based on metadata and source code."
@@ -18,14 +21,14 @@ def parse_args():
         "--metadata",
         type=str,
         required=False,
-        default="input/example/button/metadata.json",
+        default=f"input/example/{comp}/metadata.json",
         help="Path to the metadata file (MD format)",
     )
     parser.add_argument(
         "--source",
         type=str,
         required=False,
-        default="input/example/button/sourcecode.ts",
+        default=f"input/example/{comp}/sourcecode.ts",
         help="Path to the source code file",
     )
     parser.add_argument(
@@ -51,7 +54,7 @@ def parse_args():
     parser.add_argument(
         "--output",
         type=str,
-        default="output/documentation-button.md",
+        default=f"output/documentation-{comp}.md",
         help="Output path for the generated documentation",
     )
     return parser.parse_args()
