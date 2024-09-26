@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  ai-doc-gen:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ai-doc-gen
+    environment:
+      - OPENAI_API_KEY=your-openai-api-key-here
+      - OPENAI_MODEL=gpt-3.5-turbo-0125
+    volumes:
+      - ./input:/app/input
+      - ./output:/app/output
+    command: >
+      main.py
+      --metadata input/example/button/metadata.json
+      --source input/example/button/sourcecode.ts
+      --prompt_tpl input/prompt-template.md
+      --doc_tpl input/documentation-template.md
+      --writing_style input/writing-style.md
+      --output output/documentation.md
