@@ -98,7 +98,7 @@ def main():
         "writing_style": read_file(args.writing_style),
     }
 
-    print(p["writing_style"])
+    # print(p["writing_style"])
 
     # Invoke the model with input data
     res = chain.invoke(p)
