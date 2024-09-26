@@ -19,28 +19,9 @@ Check out an example of the generated documentation [here](https://github.com/da
 
 ## 🔧 Usage
 
-To generate documentation, you can use the `docker run` command or `docker-compose` for a streamlined setup:
+To generate documentation, you can use `docker-compose` for a streamlined setup:
 
-### Using Docker
-
-```shell
-docker run --rm \
-    -e OPENAI_API_KEY=your-openai-api-key-here \
-    -e OPENAI_MODEL=gpt-3.5-turbo-0125 \
-    -v $(pwd)/input:/app/input \
-    -v $(pwd)/output:/app/output \
-    ai-doc-gen \
-    --metadata input/example/button/metadata.json \
-    --source input/example/button/sourcecode.ts \
-    --prompt_tpl input/prompt-template.md \
-    --doc_tpl input/documentation-template.md \
-    --writing_style input/writing-style.md \
-    --output output/documentation.md
-```
-
-### Using Docker Compose
-
-If you prefer using `docker-compose`, simply run:
+Simply run:
 
 ```
 docker-compose run --rm ai-doc-gen
