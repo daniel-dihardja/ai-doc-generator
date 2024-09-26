@@ -29,13 +29,13 @@ def parse_args():
         help="Path to the source code file",
     )
     parser.add_argument(
-        "--doctpl",
+        "--doc_tpl",
         type=str,
         default="input/documentation-template.md",
         help="Path to the documentation template",
     )
     parser.add_argument(
-        "--prompttpl",
+        "--prompt_tpl",
         type=str,
         default="input/prompt-template.md",
         help="Path to the prompt template",
@@ -82,14 +82,14 @@ def main():
     llm = ChatOpenAI(api_key=openai_api_key, model=openai_model, temperature=0.7)
 
     # Read input files
-    prompt_template = read_file(args.prompttpl)
+    prompt_template = read_file(args.prompt_tpl)
 
     # Create the prompt
     prompt = PromptTemplate.from_template(prompt_template)
     chain = prompt | llm
 
     p = {
-        "template": read_file(args.doctpl),
+        "template": read_file(args.doc_tpl),
         "metadata": read_file(args.metadata),
         "sourcecode": read_file(args.source),
         "writing_style": read_file(args.writing_style),
