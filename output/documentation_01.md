@@ -94,21 +94,21 @@ Here’s how you can wield this Button in your app:
 
 ### Component Props
 
-| Prop Name    | Type       | Description                        | Default     |
-| ------------ | ---------- | ---------------------------------- | ----------- |
-| `label`      | `string`   | The label text displayed on the button | - |
-| `onClick`    | `() => void` | Callback function when the button is clicked | - |
-| `disabled`   | `boolean`  | Disables the button | `false` |
-| `loading`    | `boolean`  | Sets the button in a loading state | `false` |
-| `size`       | `ButtonSize` | Button size: 'small', 'medium', 'large' | `medium` |
-| `color`      | `ButtonColor` | Button color: 'primary', 'secondary', 'danger', 'success' | `primary` |
+| Prop Name  | Type          | Description                                               | Default   |
+| ---------- | ------------- | --------------------------------------------------------- | --------- |
+| `label`    | `string`      | The label text displayed on the button                    | -         |
+| `onClick`  | `() => void`  | Callback function when the button is clicked              | -         |
+| `disabled` | `boolean`     | Disables the button                                       | `false`   |
+| `loading`  | `boolean`     | Sets the button in a loading state                        | `false`   |
+| `size`     | `ButtonSize`  | Button size: 'small', 'medium', 'large'                   | `medium`  |
+| `color`    | `ButtonColor` | Button color: 'primary', 'secondary', 'danger', 'success' | `primary` |
 
 ### Events
 
-| Event Name | Type                          | Description                      |
-| ---------- | ----------------------------- | -------------------------------- |
-| `onClick`  | `() => void` | Fires when the button is clicked |
-| `onChange` | `(value: string) => void` | Fired when the value changes |
+| Event Name | Type                      | Description                      |
+| ---------- | ------------------------- | -------------------------------- |
+| `onClick`  | `() => void`              | Fires when the button is clicked |
+| `onChange` | `(value: string) => void` | Fired when the value changes     |
 
 ---
 

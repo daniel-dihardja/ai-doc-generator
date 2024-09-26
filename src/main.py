@@ -76,10 +76,10 @@ def main():
     if not openai_api_key:
         raise ValueError("Please set the OPENAI_API_KEY environment variable.")
 
-    openai_model = os.getenv("OPENAI_MODEL", "gpt-3.5-turbo")
+    openai_model = os.getenv("OPENAI_MODEL")
 
     # Initialize the OpenAI model
-    llm = ChatOpenAI(api_key=openai_api_key, model=openai_model, temperature=0.7)
+    llm = ChatOpenAI(api_key=openai_api_key, model=openai_model, temperature=0.9)
 
     # Read input files
     prompt_template = read_file(args.prompt_tpl)
