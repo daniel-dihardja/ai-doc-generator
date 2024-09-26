@@ -47,7 +47,7 @@ You can import this component in two ways:
 
 - **Global Import** (if using a larger package)
   ```javascript
-  import { [Component] } from "@your-library/react";
+  import { [Component] } from "@global-library/[component-name]";
   ```
 
 ---
