@@ -10,7 +10,7 @@ if os.getenv("DOCKER_ENV") != "true":
     load_dotenv()
 
 
-comp = "radiogroup"
+default_comp = "radiogroup"
 
 
 def parse_args():
@@ -21,14 +21,14 @@ def parse_args():
         "--metadata",
         type=str,
         required=False,
-        default=f"input/example/{comp}/metadata.json",
+        default=f"input/example/{default_comp}/metadata.json",
         help="Path to the metadata file (MD format)",
     )
     parser.add_argument(
         "--source",
         type=str,
         required=False,
-        default=f"input/example/{comp}/sourcecode.ts",
+        default=f"input/example/{default_comp}/sourcecode.ts",
         help="Path to the source code file",
     )
     parser.add_argument(
@@ -54,7 +54,7 @@ def parse_args():
     parser.add_argument(
         "--output",
         type=str,
-        default=f"output/documentation-{comp}.md",
+        default=f"output/documentation-{default_comp}.md",
         help="Output path for the generated documentation",
     )
     return parser.parse_args()

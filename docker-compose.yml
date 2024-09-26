@@ -13,9 +13,9 @@ services:
       - ./output:/app/output
     command: >
       main.py
-      --metadata input/example/button/metadata.json
-      --source input/example/button/sourcecode.ts
+      --metadata input/example/radiogroup/metadata.json
+      --source input/example/radiogroup/sourcecode.ts
       --prompt_tpl input/prompt-template.md
       --doc_tpl input/documentation-template.md
       --writing_style input/writing-style.md
-      --output output/documentation.md
+      --output output/documentation-radiogroup.md
