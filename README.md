@@ -1,6 +1,6 @@
 # AI Component Documentation Generator
 
-A CLI application that automatically generates comprehensive component documentation using your `metadata`, `source code`, and a customizable `documentation template`. The app also allows you to define a specific `writing style`, making it easy to tailor the documentation to various audiences and ensure consistency and clarity.
+A CLI application that automatically generates comprehensive component documentation using your `metadata`, `source code`, and a customizable `documentation template`. The app leverages the `OpenAI API`, `prompt engineering`, and `LangChain` to generate high-quality documentation. It also allows you to define a specific `writing style`, making it easy to tailor the documentation to various audiences and ensure consistency and clarity.
 
 ## 🚀 Features
 
