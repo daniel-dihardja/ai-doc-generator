@@ -64,7 +64,7 @@ To use the script, run:
 
 ### 📌 Parameters
 
-- \`OPENAI_API_KEY\` (Optional): Your OpenAI API key. Default: \`your-openai-api-key-here\`.
+- \`OPENAI_API_KEY\`: Your OpenAI API key. Default: \`your-openai-api-key-here\`.
 - \`OPENAI_MODEL\` (Optional): The OpenAI model to use. Default: \`gpt-3.5-turbo-0125\`.
 - \`METADATA\` (Optional): Path to the metadata file. Default: \`input/example/button/metadata.json\`.
 - \`SOURCE\` (Optional): Path to the source code file. Default: \`input/example/button/sourcecode.ts\`.
