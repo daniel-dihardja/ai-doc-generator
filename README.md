@@ -65,14 +65,14 @@ To use the script, run:
 
 ### 📌 Parameters
 
-- \`OPENAI_API_KEY\`(Required): Your OpenAI API key.
-- \`OPENAI_MODEL\` (Optional): The OpenAI model to use. Default: \`gpt-3.5-turbo-0125\`.
-- \`METADATA\` (Optional): Path to the metadata file. Default: \`input/example/button/metadata.json\`.
-- \`SOURCE\` (Optional): Path to the source code file. Default: \`input/example/button/sourcecode.ts\`.
-- \`PROMPT_TEMPLATE\` (Optional): Path to the prompt template file. Default: \`input/prompt-template.md\`.
-- \`DOC_TEMPLATE\` (Optional): Path to the documentation template file. Default: \`input/documentation-template.md\`.
-- \`WRITING_STYLE\` (Optional): Path to the writing style file. Default: \`input/writing-style.md\`.
-- \`OUTPUT\` (Optional): Path to save the generated documentation. Default: \`output/documentation.md\`.
+- `OPENAI_API_KEY`(Required): Your OpenAI API key.
+- `OPENAI_MODEL` (Optional): The OpenAI model to use. Default: `gpt-3.5-turbo-0125`.
+- `METADATA` (Optional): Path to the metadata file. Default: `input/example/button/metadata.json`.
+- `SOURCE` (Optional): Path to the source code file. Default: `input/example/button/sourcecode.ts`.
+- `PROMPT_TEMPLATE` (Optional): Path to the prompt template file. Default: `input/prompt-template.md`.
+- `DOC_TEMPLATE` (Optional): Path to the documentation template file. Default: `input/documentation-template.md`.
+- `WRITING_STYLE` (Optional): Path to the writing style file. Default: `input/writing-style.md`.
+- `OUTPUT` (Optional): Path to save the generated documentation. Default: `output/documentation.md`.
 
 ### ℹ️ Examples
 
