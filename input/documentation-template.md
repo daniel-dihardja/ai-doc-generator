@@ -5,7 +5,6 @@
 A clear and concise description of what the component does and its primary use case.
 
 - **When to use**: Provide a brief explanation of scenarios where this component is useful.
-- Optionally, include diagrams or flowcharts if needed to describe the workflow.
 
 ---
 
