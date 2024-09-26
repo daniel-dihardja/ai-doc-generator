@@ -58,9 +58,10 @@ This project includes a convenient shell script, `run-docker.sh`, designed to si
 ### 📋 Usage
 
 To use the script, run:
-\`\`\`bash
+
+```bash
 ./run-docker.sh [OPENAI_API_KEY] [OPENAI_MODEL] [METADATA] [SOURCE] [PROMPT_TEMPLATE] [DOC_TEMPLATE] [WRITING_STYLE] [OUTPUT]
-\`\`\`
+```
 
 ### 📌 Parameters
 
