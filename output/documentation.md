@@ -2,9 +2,9 @@
 
 ## 1. Component Overview
 
-The Button component is like the Swiss Army knife of UI elements—it's versatile, reliable, and always there when you need it. Need a clickable element to kick off actions like submitting forms, starting processes, or navigating through pages? Button's got your back!
+The Button component is like a trusty sidekick in your UI arsenal, always ready to take action with a click of a mouse. It comes in all shapes and sizes, allowing you to customize its appearance and behavior to suit your needs.
 
-- **When to use**: Use the Button component when you need a trusty sidekick for triggering actions in your app.
+- **When to use**: Use the Button component when you need a clickable element to trigger actions like submitting forms, starting processes, or navigating through pages.
 
 ---
 
@@ -96,19 +96,20 @@ Here’s how to use this component in your application:
 
 ### Component Props
 
-| Prop Name    | Type                                   | Description                        | Default     |
-| ------------ | -------------------------------------- | ---------------------------------- | ----------- |
-| `variant`    | `string`                               | The visual style of the button     | `"default"` |
-| `size`       | `small` &#124; `medium` &#124; `large` | Adjusts the button size            | `"medium"`  |
-| `isDisabled` | `boolean`                              | Disables the button                | `false`     |
-| `onClick`    | `function`                             | Function triggered on button click | -           |
-| `isLoading`  | `boolean`                              | Shows a loading spinner            | `false`     |
+| Prop Name    | Type       | Description                        | Default     |
+| ------------ | ---------- | ---------------------------------- | ----------- |
+| `label`      | `string`   | The label text displayed on the button | - |
+| `onClick`    | `() => void` | Callback function to be called when the button is clicked | - |
+| `disabled`   | `boolean`  | Whether the button is disabled      | `false`     |
+| `loading`    | `boolean`  | Whether the button is in a loading state | `false`     |
+| `size`       | `ButtonSize` | Button size: 'small', 'medium', 'large' | `medium` |
+| `color`      | `ButtonColor` | Button color: 'primary', 'secondary', 'danger', 'success' | `primary` |
 
 ### Events
 
 | Event Name | Type                          | Description                      |
 | ---------- | ----------------------------- | -------------------------------- |
-| `onClick`  | `(event: MouseEvent) => void` | Fires when the button is clicked |
+| `onClick`  | `() => void` | Fires when the button is clicked |
 | `onChange` | `(value: string) => void`     | Fired when the value changes     |
 
 ---
@@ -118,8 +119,8 @@ Here’s how to use this component in your application:
 This component follows accessibility best practices:
 
 - **ARIA roles**: Role of `button` is applied to this component.
-- **Keyboard Navigation**: Full support for `Tab`, `Enter`, and `Space` key interactions.
-- **Focus Management**: Proper focus management and visibility of focus state.
+- **Keyboard Navigation**: Supports navigation via Tab, Enter, and Space keys.
+- **Focus Management**: The button has proper focus management and a visible focus state.
 - **Screen Readers**: Provides screen reader compatibility with meaningful labels.
 
 ---
@@ -137,7 +138,7 @@ This component follows accessibility best practices:
 - Handle different states like hover, focus, error, success:
 
   ```jsx
-  <Button variant="error">Error State</Button>
+  <Button className='hover:bg-gray-300'>Hover Me</Button>
   ```
 
 - Ensure that edge cases, such as empty states or long text, are handled gracefully.
@@ -161,4 +162,4 @@ To ensure the component works properly:
 
 ---
 
-That's it! You're all set to button up your app with the Button component. Happy coding! 🚀
+Now you're armed with the knowledge to wield the Button component like a pro in your projects. Click, customize, and conquer with ease!

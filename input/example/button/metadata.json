@@ -24,52 +24,6 @@
         "example": "<Button className='bg-blue-500 hover:bg-blue-700'>Styled Button</Button>",
         "theming": "You can extend the default styles using Tailwind CSS classes or any CSS-in-JS solution. Pass in custom class names to override the default theme."
     },
-    "apiReference": {
-        "props": [
-            {
-                "name": "variant",
-                "type": "string",
-                "description": "The visual style of the button.",
-                "default": "default"
-            },
-            {
-                "name": "size",
-                "type": "string",
-                "description": "Adjusts the size of the button.",
-                "default": "medium"
-            },
-            {
-                "name": "isDisabled",
-                "type": "boolean",
-                "description": "Disables the button when true.",
-                "default": "false"
-            },
-            {
-                "name": "onClick",
-                "type": "function",
-                "description": "Function triggered when the button is clicked.",
-                "default": "-"
-            },
-            {
-                "name": "isLoading",
-                "type": "boolean",
-                "description": "Shows a loading spinner when true.",
-                "default": "false"
-            }
-        ]
-    },
-    "events": [
-        {
-            "name": "onClick",
-            "type": "(event: MouseEvent) => void",
-            "description": "Triggered when the button is clicked."
-        },
-        {
-            "name": "onChange",
-            "type": "(value: string) => void",
-            "description": "Triggered when the value of an associated input changes."
-        }
-    ],
     "accessibilityGuidelines": {
         "ariaRole": "button",
         "keyboardNavigation": "Supports navigation via Tab, Enter, and Space keys.",
