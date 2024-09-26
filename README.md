@@ -22,12 +22,13 @@ Check out an example of the generated documentation [here](https://github.com/da
 ```shell
 docker run --rm \
     -e OPENAI_API_KEY=your-openai-api-key-here \
-    -e OPENAI_MODEL=gpt-4 \
+    -e OPENAI_MODEL=gpt-3.5-turbo-0125 \
     -v $(pwd)/input:/app/input \
     -v $(pwd)/output:/app/output \
     ai-doc-gen \
-    --metadata input/metadata.txt \
-    --source input/component-source.ts \
+    --metadata input/example/button/metadata.json \
+    --source input/example/button/sourcecode.ts \
     --template input/documentation-template.md \
+    --writing_style input/writing-style.md \
     --output output/documentation.md
 ```
