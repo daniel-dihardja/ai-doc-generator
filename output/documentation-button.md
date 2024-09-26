@@ -85,7 +85,7 @@ Here’s how to use this component in your application:
 - You can customize the component’s appearance by passing custom classes or using a theming mechanism (e.g., CSS-in-JS, Tailwind CSS).
 
   ```jsx
-  <Button className='bg-blue-500 hover:bg-blue-700'>Styled Button</Button>
+  <Button className="bg-blue-500 hover:bg-blue-700">Styled Button</Button>
   ```
 
 - Learn how to extend or override default styles.
@@ -96,21 +96,21 @@ Here’s how to use this component in your application:
 
 ### Component Props
 
-| Prop Name    | Type       | Description                        | Default     |
-| ------------ | ---------- | ---------------------------------- | ----------- |
-| `label`      | `string`   | The label text displayed on the button | - |
-| `onClick`    | `() => void` | Callback function to be called when the button is clicked | - |
-| `disabled`   | `boolean`  | Whether the button is disabled      | - |
-| `loading`    | `boolean`  | Whether the button is in a loading state | - |
-| `size`       | `ButtonSize` | Button size: 'small', 'medium', 'large' | `'medium'` |
-| `color`      | `ButtonColor` | Button color: 'primary', 'secondary', 'danger', 'success' | `'primary'` |
+| Prop Name  | Type          | Description                                               | Default   |
+| ---------- | ------------- | --------------------------------------------------------- | --------- |
+| `label`    | `string`      | The label text displayed on the button                    | -         |
+| `onClick`  | `function`    | Callback function to be called when the button is clicked | -         |
+| `disabled` | `boolean`     | Whether the button is disabled                            | `false`   |
+| `loading`  | `boolean`     | Whether the button is in a loading state                  | -         |
+| `size`     | `ButtonSize`  | Button size: 'small', 'medium', 'large'                   | `medium`  |
+| `color`    | `ButtonColor` | Button color: 'primary', 'secondary', 'danger', 'success' | `primary` |
 
 ### Events
 
-| Event Name | Type                          | Description                      |
-| ---------- | ----------------------------- | -------------------------------- |
-| `onClick`  | `() => void` | Fires when the button is clicked |
-| - | - | - |
+| Event Name | Type                      | Description                      |
+| ---------- | ------------------------- | -------------------------------- |
+| `onClick`  | `() => void`              | Fires when the button is clicked |
+| `onChange` | `(value: string) => void` | Fired when the value changes     |
 
 ---
 
@@ -128,8 +128,8 @@ This component follows accessibility best practices:
 ## 8. Best Practices
 
 - Use the component with clear and meaningful labels.
-- Avoid overloading the component with too many variations.
-- Keep performance in mind when using with dynamic content.
+- Avoid using too many visual variants in the same context.
+- Use the loading state only when performing a long-running task.
 
 ---
 
@@ -138,7 +138,7 @@ This component follows accessibility best practices:
 - Handle different states like hover, focus, error, success:
 
   ```jsx
-  <Button className='hover:bg-gray-300'>Hover Me</Button>
+  <Button className="hover:bg-gray-300">Hover Me</Button>
   ```
 
 - Ensure that edge cases, such as empty states or long text, are handled gracefully.

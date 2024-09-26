@@ -18,14 +18,14 @@ def parse_args():
         "--metadata",
         type=str,
         required=False,
-        default="input/example/select/metadata.json",
+        default="input/example/button/metadata.json",
         help="Path to the metadata file (MD format)",
     )
     parser.add_argument(
         "--source",
         type=str,
         required=False,
-        default="input/example/select/sourcecode.ts",
+        default="input/example/button/sourcecode.ts",
         help="Path to the source code file",
     )
     parser.add_argument(
@@ -51,7 +51,7 @@ def parse_args():
     parser.add_argument(
         "--output",
         type=str,
-        default="output/documentation-select.md",
+        default="output/documentation-button.md",
         help="Output path for the generated documentation",
     )
     return parser.parse_args()
@@ -79,7 +79,7 @@ def main():
     openai_model = os.getenv("OPENAI_MODEL")
 
     # Initialize the OpenAI model
-    llm = ChatOpenAI(api_key=openai_api_key, model=openai_model, temperature=0.9)
+    llm = ChatOpenAI(api_key=openai_api_key, model=openai_model, temperature=0.5)
 
     # Read input files
     prompt_template = read_file(args.prompt_tpl)
