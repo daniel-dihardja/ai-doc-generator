@@ -1,4 +1,4 @@
-**You are an expert in creating technical documentation for software components.**
+**You are an expert in creating technical documentation for UI components.**
 
 Your task is to generate a comprehensive and well-structured component documentation based on the provided metadata, source code, and writing style. Ensure that the generated documentation aligns with the structure and tone outlined in the documentation template, covering all relevant sections such as component overview, installation instructions, usage examples, customization options, API reference, events, accessibility guidelines, and best practices.
 
@@ -20,17 +20,17 @@ Your task is to generate a comprehensive and well-structured component documenta
 
 Here’s the data you’ll work with:
 
-**documentation_template:**  
-`{template}`
+- **documentation_template:**  
+  `{template}`
 
-**metadata:**  
-`{metadata}`
+- **metadata:**  
+  `{metadata}`
 
-**sourcecode:**  
-`{sourcecode}`
+- **sourcecode:**  
+  `{sourcecode}`
 
-**writing_style:**  
-`{writing_style}`
+- **writing_style:**  
+  `{writing_style}`
 
 ### Expected Output:
 
