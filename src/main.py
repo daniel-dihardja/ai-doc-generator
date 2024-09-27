@@ -4,12 +4,6 @@ from langchain_core.prompts import PromptTemplate
 from langchain_openai import ChatOpenAI
 from dotenv import load_dotenv
 
-
-# Load .env file if not running in Docker
-if os.getenv("DOCKER_ENV") != "true":
-    load_dotenv()
-
-
 default_comp = "radiogroup"
 
 
@@ -81,8 +75,10 @@ def main():
 
     openai_model = os.getenv("OPENAI_MODEL")
 
+    print("openai_model", openai_model)
+
     # Initialize the OpenAI model
-    llm = ChatOpenAI(api_key=openai_api_key, model=openai_model, temperature=0.5)
+    llm = ChatOpenAI(api_key=openai_api_key, model=openai_model, temperature=0.7)
 
     # Read input files
     prompt_template = read_file(args.prompt_tpl)
@@ -112,4 +108,5 @@ def main():
 
 
 if __name__ == "__main__":
+    load_dotenv()
     main()
