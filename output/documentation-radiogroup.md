@@ -2,9 +2,9 @@
 
 ## 1. Component Overview
 
-Welcome to the wonderful world of the `RadioGroup` component! This little gem is designed to help you gather a single choice from a list of pre-defined options. Whether you're asking users to choose their favorite Harry Potter character, their preferred mode of payment, or what type of pizza crust they want — `RadioGroup` has you covered.
+Hey there! The RadioGroup component is your go-to when you need users to choose just one option from a list of choices. Think about picking a favorite ice cream flavor or selecting a payment method. Easy peasy, right?
 
-- **When to use**: Use `RadioGroup` when you want the user to pick only one option out of a given set. Perfect for scenarios like gender selection, payment method choices, or setting user preferences. Basically, any time you need to enforce a monogamous relationship between the user and their choice.
+- **When to use**: Use RadioGroup whenever you want the user to pick only one option out of a given set, like selecting a gender, choosing a payment method, or setting a preference.
 
 ---
 
@@ -12,7 +12,7 @@ Welcome to the wonderful world of the `RadioGroup` component! This little gem is
 
 ### CLI
 
-To get started with the `RadioGroup` component, you need to install it using your favorite package manager. Here are your options:
+To bring this awesome component into your project, just run one of these commands using your preferred package manager:
 
 - **npm**
 
@@ -27,80 +27,78 @@ To get started with the `RadioGroup` component, you need to install it using you
   ```
 
 - **pnpm**
-  
   ```bash
   pnpm add @your-library/radiogroup
   ```
 
-No global dependencies required — it's a clean install. You're welcome!
+No need for any global dependencies here. You’re all set!
 
 ---
 
 ## 3. Importing the Component
 
-You can bring the `RadioGroup` into your project in a couple of ways. Choose your own adventure:
+You can import this component in two ways:
 
 - **Individual Import**
 
   ```javascript
-  import { RadioGroup } from '@your-library/radiogroup';
+  import { RadioGroup } from "@your-library/radiogroup";
   ```
 
-- **Global Import** (if you're using a larger package)
-
+- **Global Import** (if using a larger package)
   ```javascript
-  import { RadioGroup } from '@your-library/react';
+  import { RadioGroup } from "@your-library/radiogroup";
   ```
-
-Just pick the method that tickles your fancy and you're good to go.
 
 ---
 
 ## 4. Usage Examples
 
-Here’s how to sprinkle some `RadioGroup` magic into your application:
+Let’s dive right into how you can use this component in your application:
 
 1. **Basic Example**:
-   
+
    ```jsx
-   <RadioGroup options={['Option 1', 'Option 2', 'Option 3']} />
+   <RadioGroup options={["Option 1", "Option 2", "Option 3"]} />
    ```
 
 2. **Controlled Example**:
-   
+
    ```jsx
-   <RadioGroup 
-     value='Option 2' 
-     onChange={(value) => console.log(value)} 
-     options={['Option 1', 'Option 2', 'Option 3']} 
+   <RadioGroup
+     value="Option 2"
+     onChange={(value) => console.log(value)}
+     options={["Option 1", "Option 2", "Option 3"]}
    />
    ```
 
 3. **Disabled State**:
-   
+
    ```jsx
-   <RadioGroup options={['Option 1', 'Option 2']} isDisabled />
+   <RadioGroup options={["Option 1", "Option 2"]} isDisabled />
    ```
 
 4. **Horizontal Layout**:
-   
    ```jsx
-   <RadioGroup options={['Option 1', 'Option 2', 'Option 3']} layout='horizontal' />
+   <RadioGroup
+     options={["Option 1", "Option 2", "Option 3"]}
+     layout="horizontal"
+   />
    ```
-
-See? It’s like magic, but with code.
 
 ---
 
 ## 5. Customization and Theming
 
-You can style `RadioGroup` to your heart's content. Here’s an example of how to give it some flair:
+Want to make it look snazzy? Here’s how you can customize the component’s appearance:
 
-```jsx
-<RadioGroup options={['Option 1', 'Option 2']} className='text-blue-600' />
-```
+- Pass custom classes or use a theming mechanism like CSS-in-JS or Tailwind CSS.
 
-Customize the `RadioGroup` with CSS classes or inline styles. Pass in custom class names to modify colors, spacing, and layout to fit your design system. The world is your oyster!
+  ```jsx
+  <RadioGroup options={["Option 1", "Option 2"]} className="text-blue-600" />
+  ```
+
+- Customize the RadioGroup with CSS classes or inline styles. Pass in custom class names to modify colors, spacing, and layout to fit your design system.
 
 ---
 
@@ -108,75 +106,79 @@ Customize the `RadioGroup` with CSS classes or inline styles. Pass in custom cla
 
 ### Component Props
 
-| Prop Name      | Type       | Description                                            | Default        |
-| -------------- | ---------- | ------------------------------------------------------ | -------------- |
-| `options`      | `object[]` | List of radio options to display in the group          | `[]`           |
-| `onChange`     | `function` | Callback function triggered when a radio option is selected | `undefined`    |
-| `selectedValue`| `string`   | Currently selected value                               | `undefined`    |
-| `disabled`     | `boolean`  | Whether the radio group is disabled                    | `false`        |
-| `size`         | `string`   | Size of the radio buttons: 'small', 'medium', 'large'  | `"medium"`     |
-| `variant`      | `string`   | Variant of the radio buttons: 'default', 'outline', 'filled' | `"default"`    |
+Here’s the lowdown on the props you can use with RadioGroup:
+
+| Prop Name       | Type                      | Description                                                  | Default     |
+| --------------- | ------------------------- | ------------------------------------------------------------ | ----------- |
+| `options`       | `RadioOption[]`           | List of radio options to display in the group                | `[]`        |
+| `onChange`      | `(value: string) => void` | Callback function triggered when a radio option is selected  | `undefined` |
+| `selectedValue` | `string`                  | Currently selected value                                     | `undefined` |
+| `disabled`      | `boolean`                 | Whether the radio group is disabled                          | `false`     |
+| `size`          | `RadioSize`               | Size of the radio buttons: 'small', 'medium', 'large'        | `"medium"`  |
+| `variant`       | `RadioVariant`            | Variant of the radio buttons: 'default', 'outline', 'filled' | `"default"` |
 
 ### Events
 
-| Event Name | Type                          | Description                      |
-| ---------- | ----------------------------- | -------------------------------- |
-| `onChange` | `(selectedValue: string) => void` | Fires when a radio option is selected |
+| Event Name | Type                      | Description                           |
+| ---------- | ------------------------- | ------------------------------------- |
+| `onChange` | `(value: string) => void` | Fires when a radio option is selected |
 
 ---
 
 ## 7. Accessibility Guidelines
 
-This component is a friend to everyone, including those using assistive technologies. Here's how it keeps things accessible:
+We’ve got you covered with accessibility best practices:
 
-- **ARIA roles**: The `RadioGroup` applies the role of `radiogroup` to ensure screen readers know what’s up.
-- **Keyboard Navigation**: Supports navigation using Arrow keys to change the selection within the group.
+- **ARIA roles**: The role of `radiogroup` is applied to this component.
+- **Keyboard Navigation**: Supports navigation through Arrow keys to change the selection within the group.
 - **Focus Management**: Automatically handles focus when navigating options, ensuring the selected option is focusable.
-- **Screen Readers**: Provides screen reader compatibility with meaningful labels for each radio button within the group.
-
-Accessibility matters, folks!
+- **Screen Readers**: Supports screen readers by providing meaningful labels for each radio button within the group.
 
 ---
 
 ## 8. Best Practices
 
-To make the best use of `RadioGroup`, here are some golden nuggets of wisdom:
+Here are some tips to make the most out of your RadioGroup:
 
-- Always provide a label for the `RadioGroup` to indicate its purpose.
-- Use distinct labels for each radio option to avoid confusion. Your users will thank you.
-- Ensure that the default selected option is clear to the user, or allow no selection initially if that's your jam.
+- Always provide a label for the RadioGroup to indicate its purpose.
+- Use distinct labels for each radio option to avoid confusion.
+- Ensure that the default selected option is clear to the user, or allow no selection initially if required.
 
 ---
 
 ## 9. Component States and Edge Cases
 
-Don’t worry, `RadioGroup` can handle all sorts of scenarios:
+Take care of different states and edge cases like a pro:
 
 - **No Selection**:
 
   ```jsx
-  <RadioGroup options={['Option 1', 'Option 2', 'Option 3']} value='' />
+  <RadioGroup options={["Option 1", "Option 2", "Option 3"]} value="" />
   ```
 
 - **Error State**:
 
   ```jsx
-  <RadioGroup options={['Option 1', 'Option 2']} className='border-red-500' error='Please select an option.' />
+  <RadioGroup
+    options={["Option 1", "Option 2"]}
+    className="border-red-500"
+    error="Please select an option."
+  />
   ```
 
 - **Long Labels**:
-  
-  ```jsx
-  <RadioGroup options={['A very long option label that might overflow', 'Option 2']} />
-  ```
 
-From no selection to long-winded labels, `RadioGroup` has got you covered.
+  ```jsx
+  <RadioGroup
+    options={["A very long option label that might overflow", "Option 2"]}
+  />
+  ```
 
 ---
 
 ## 10. Testing Guidelines
 
-To ensure `RadioGroup` is always in tip-top shape:
+To make sure everything works smoothly:
 
 - **Unit Testing**: Use `Jest` or `React Testing Library` to test the component’s behavior.
 
@@ -185,13 +187,11 @@ To ensure `RadioGroup` is always in tip-top shape:
   ```
 
 - **End-to-End Testing**: Use `Cypress` or `Playwright` for integration tests.
-  
+
   ```bash
   cypress run radiogroup.cy.js
   ```
 
-Because even the best of us have Googled "how to test a component" more than once.
-
 ---
 
-And there you have it! The `RadioGroup` component in all its glory. Happy coding! May your radio buttons always be perfectly circular and your options always clear.
+And there you have it! A complete guide to using the RadioGroup component. Happy coding! 🚀
