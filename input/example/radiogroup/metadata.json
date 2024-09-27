@@ -12,7 +12,7 @@
     },
     "importInstructions": {
         "individualImport": "import { RadioGroup } from '@your-library/radiogroup';",
-        "globalImport": "import { RadioGroup } from '@your-library/react';"
+        "globalImport": "import { RadioGroup } from '@your-library/radiogroup';"
     },
     "usageExamples": {
         "basicExample": "<RadioGroup options={['Option 1', 'Option 2', 'Option 3']} />",

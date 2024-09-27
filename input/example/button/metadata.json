@@ -12,7 +12,7 @@
     },
     "importInstructions": {
         "individualImport": "import { Button } from '@your-library/button';",
-        "globalImport": "import { Button } from '@your-library/react';"
+        "globalImport": "import { Button } from '@your-library/button';"
     },
     "usageExamples": {
         "basicExample": "<Button>Click Me</Button>",

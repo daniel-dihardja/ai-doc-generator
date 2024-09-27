@@ -12,7 +12,7 @@
     },
     "importInstructions": {
         "individualImport": "import { Select } from '@your-library/select';",
-        "globalImport": "import { Select } from '@your-library/react';"
+        "globalImport": "import { Select } from '@your-library/select';"
     },
     "usageExamples": {
         "basicExample": "<Select options={['Option 1', 'Option 2', 'Option 3']} />",
