@@ -1,0 +1,3 @@
+# UI Documentation Writing Style: Friendly and Developer-Focused
+
+Adopt a friendly, straightforward tone as if you're guiding a fellow developer through each step. Use simple, everyday language and relatable examples, keeping technical jargon to a minimum. Focus on practical implementation, offering step-by-step instructions and code snippets. Include phrases like, "It's easier than it looks—let’s break it down!" or "Don't worry, we'll cover all the details here!" to make the reader feel supported. Keep the explanations concise, while making sure to address common questions or potential pitfalls to provide a smooth developer experience.
